@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Model Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AR Experience</h1>
+            <p>Swipe to explore 3D models</p>
+        </header>
+
+        <div class="model-container">
+            <div class="model-slide active" data-model="0">
+                <model-viewer 
+                    src="assets/room-1.glb"
+                    alt="Room 1 3D Model"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls
+                    touch-action="pan-y"
+                    shadow-intensity="1"
+                    environment-image="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr"
+                    ios-src="assets/room-1.usdz">
+                    <button class="ar-button" slot="ar-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                        View in AR
+                    </button>
+                </model-viewer>
+                <div class="model-info">
+                    <h3>Room 1</h3>
+                    <p>Explore this beautiful 3D room in augmented reality</p>
+                </div>
+            </div>
+
+            <div class="model-slide" data-model="1">
+                <model-viewer 
+                    src="assets/room-2.glb"
+                    alt="Room 2 3D Model"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls
+                    touch-action="pan-y"
+                    shadow-intensity="1"
+                    environment-image="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr"
+                    ios-src="assets/room-2.usdz">
+                    <button class="ar-button" slot="ar-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                        View in AR
+                    </button>
+                </model-viewer>
+                <div class="model-info">
+                    <h3>Room 2</h3>
+                    <p>Discover another stunning 3D room experience</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-button prev-button" data-direction="prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            
+            <div class="nav-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+            </div>
+            
+            <button class="nav-button next-button" data-direction="next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
